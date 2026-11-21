@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #111;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+header h1 span {
+  color: #6366f1;
+}
+
+.dica {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+kbd {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+#btn-gerar {
+  background: #111827;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+
+#btn-gerar:hover {
+  background: #374151;
+}
+
+#btn-gerar:active {
+  transform: scale(0.97);
+}
+
+/* Grid das 5 cores */
+#paleta-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cor-coluna {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 3.5rem;
+  gap: 1rem;
+  transition: background-color 0.25s ease;
+}
+
+.hex-texto {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.hex-texto:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-trancar {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  transition: transform 0.15s, background 0.2s;
+}
+
+.btn-trancar:hover {
+  transform: scale(1.05);
+}
+
+/* Ajuste automático de contraste (texto claro ou escuro) */
+.texto-claro { color: #ffffff; }
+.texto-escuro { color: #111827; }
+
+/* Toast de aviso */
+.toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #111827;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.toast.mostrar {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .dica { display: none; }
+  #paleta-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .cor-coluna {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+}

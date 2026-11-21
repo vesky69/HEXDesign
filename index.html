@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Paletas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>HEX<span>Design</span></h1>
+    <p class="dica">Pressione <kbd>Espaço</kbd> para gerar novas cores</p>
+    <button id="btn-gerar">Gerar Paleta</button>
+  </header>
+
+  <!-- As 5 colunas serão injetadas aqui pelo JS -->
+  <main id="paleta-container"></main>
+
+  <!-- Notificação flutuante ao copiar -->
+  <div id="toast" class="toast">Código HEX copiado!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
